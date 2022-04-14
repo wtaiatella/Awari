@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "description": "API de Blog da aula da Awari",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://thiagohdeplima@github.com/thiagohdeplima/aula-awari-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagohdeplima/aula-awari-blog/issues"
+  },
+  "homepage": "https://github.com/thiagohdeplima/aula-awari-blog#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "knex": "^1.0.6",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
