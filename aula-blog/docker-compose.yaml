@@ -1,6 +1,6 @@
 # https://docs.docker.com/compose/
 
-version: "3"
+version: "3.4"
 
 volumes:
   database:
@@ -14,18 +14,22 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "123456"
     networks:
-    - awari
+      - awari
     volumes:
-    - database:/var/lib/mysql:rw
-  
+      - database:/var/lib/mysql:rw
+
   api:
-    build: .
+    build:
+      #pasta externa de referencia onde está salvo o dockerfile
+      context: .
+      #Até qual estagio definido no dockerfile a aplicação deve ser executada
+      target: build
     ports:
-    - 4500:3000
+      - 4500:3000
     networks:
-    - awari
+      - awari
     volumes:
-    - .:/srv/app
+      - .:/srv/app
     environment:
       DATABASE_HOST: database
       DATABASE_PORT: "3306"
