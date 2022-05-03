@@ -79,7 +79,7 @@ server.post('/posts', function (request, response) {
 })
 
 server.put('/posts/:id', function (request, response) {
-  console.log('id = ', teste)
+  console.log('id put= ', request.params.id)
   knex('posts')
     .where('id', '=', teste)
     .update(request.body)

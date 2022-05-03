@@ -8,7 +8,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-15T12:30:16.215Z",
-    "modified": "2022-04-19T14:04:53.307Z",
+    "modified": "2022-04-19T21:52:12.714Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -18,11 +18,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:4500/posts",
-    "url": "http://localhost:4500/posts/4",
+    "url": "http://localhost:4500/posts/3",
     "method": "PUT",
     "sortNum": 0,
     "created": "2022-04-19T00:10:09.196Z",
-    "modified": "2022-04-19T13:56:17.005Z",
+    "modified": "2022-04-19T22:45:13.140Z",
     "headers": [
       {
         "name": "Content-Type",
@@ -32,7 +32,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"title\":\"tesate4\",\n    \"content\":\"descrição do conteudo\"\n}",
+      "raw": "{\n    \"title\":\"tesate4\",\n    \"content\":\"descrição 4 do conteudo\"\n}",
       "form": []
     },
     "tests": []
@@ -66,11 +66,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:4500/posts/2",
-    "url": "http://localhost:4500/posts/2",
+    "url": "http://localhost:4500/posts/4",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-19T14:03:52.837Z",
-    "modified": "2022-04-19T14:03:52.872Z",
+    "modified": "2022-04-19T21:52:51.730Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -84,7 +84,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-19T14:03:59.974Z",
-    "modified": "2022-04-19T14:04:00.010Z",
+    "modified": "2022-04-19T21:52:24.903Z",
     "headers": [],
     "params": [],
     "tests": []
