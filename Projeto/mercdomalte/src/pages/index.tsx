@@ -1,6 +1,5 @@
-import styles from '../styles/home.module.scss';
 import Head from 'next/head';
-import { Header } from '../components/Header';
+import { Dashboard } from '../components/Dashboard/Index';
 
 export default function Home() {
 	return (
@@ -8,7 +7,7 @@ export default function Home() {
 			<Head>
 				<title>Mercado do Malte</title>
 			</Head>
-			<Header />
+			<Dashboard />
 		</>
 	);
 }

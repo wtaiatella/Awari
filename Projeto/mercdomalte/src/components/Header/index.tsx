@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Container, Content } from './styles';
 import 'antd/dist/antd.css';
-import { Input, Button } from 'antd';
+import { Input } from 'antd';
+import { SignInButton } from '../SignInButton/Index';
 
 export function Header() {
 	const { Search } = Input;
@@ -10,13 +11,14 @@ export function Header() {
 	return (
 		<Container>
 			<Content>
-				<Image
-					src='/images/logo.png'
-					alt='logo Mercado do Malte'
-					width='107'
-					height='87'
-					//layout='fill'
-				/>
+				<a href='./'>
+					<Image
+						src='/images/logo.png'
+						alt='logo Mercado do Malte'
+						width='107'
+						height='87'
+					/>
+				</a>
 
 				<Search
 					className='busca'
@@ -27,7 +29,7 @@ export function Header() {
 						width: 600,
 					}}
 				/>
-				<Button type='link'>Login</Button>
+				<SignInButton />
 			</Content>
 		</Container>
 	);
