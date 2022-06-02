@@ -1,13 +1,14 @@
 import styles from '../styles/home.module.scss';
 import Head from 'next/head';
+import { Header } from '../components/Header';
 
 export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>ig.news</title>
+				<title>Mercado do Malte</title>
 			</Head>
-			<h1 className={styles.title}>hello</h1>
+			<Header />
 		</>
 	);
 }
