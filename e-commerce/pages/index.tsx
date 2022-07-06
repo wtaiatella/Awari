@@ -1,18 +1,27 @@
-import type { NextPage } from 'next';
+import type { NextPage, NextPageContext } from 'next';
 import Link from 'next/link';
 
-import styles from '../styles/Home.module.css';
+export const getServerSideProps = async (_context: NextPageContext) => {
+	//const { id } = context.query;
 
-import prisma from '../lib/prisma';
+	const response = await fetch(`${process.env.BACKEND_API}/categories`);
+	const categories = await response.json();
 
-export const getServerSideProps = async (context) => {
-	const { id } = context.query;
-
-	const categories = await prisma.category.findMany({});
+	//const categories = await prisma.category.findMany({});
 
 	return { props: { categories } };
 };
-const Home: NextPage = ({ categories }) => {
+
+type Category = {
+	id: string;
+	name: string;
+};
+
+type HomeProps = {
+	categories: Array<Category>;
+};
+
+const Home: NextPage<HomeProps> = ({ categories }) => {
 	return (
 		<ul>
 			{categories.map((category) => {

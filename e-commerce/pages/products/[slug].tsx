@@ -1,26 +1,17 @@
 import type { NextPageContext, NextPage } from 'next';
-import prisma from '../../lib/prisma';
-import NumberFormat from 'react-number-format';
 import Price from '../../components/price';
 
 export const getServerSideProps = async (context: NextPageContext) => {
 	const { slug } = context.query;
-	const product = await prisma.product.findFirst({
-		where: {
-			slug: context.query.slug,
-		},
-	});
+	const responseProduct = await fetch(
+		`${process.env.BACKEND_API}/products/${slug}`
+	);
+	const productObject = await responseProduct.json();
 
-	/* 	const product = {
-		name: 'Nome do Produto',
-		price: 10.5,
-		description: 'Descrição do produto',
-	}; */
-
-	if (product) {
+	if (productObject) {
 		return {
 			props: {
-				product: product,
+				product: productObject,
 			},
 		};
 	} else {

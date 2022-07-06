@@ -1,23 +1,30 @@
 import type { NextPage } from 'next';
-import prisma from '../../lib/prisma';
 import Link from 'next/link';
 import Price from '../../components/price';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { id } = context.query;
 
-	const category = await prisma.category.findUnique({
-		where: {
-			id: id,
-		},
-		include: { products: true },
-	});
+	const responseCategory = await fetch(
+		`${process.env.BACKEND_API}/categories/${id}`
+	);
+	const categoryObject = await responseCategory.json();
 
-	if (category) {
-		return { props: { category } };
-	} else {
-		return { notFound: true };
-	}
+	const resposeProducts = await fetch(
+		`${process.env.BACKEND_API}/categories/${id}/products`
+	);
+	const productObject = await resposeProducts.json();
+
+	const category = {
+		...categoryObject,
+		products: productObject,
+	};
+
+	//if (category) {
+	return { props: { category } };
+	//} else {
+	//	return { notFound: true };
+	//}
 };
 
 const CategoryPage: NextPage = ({ category }) => {
@@ -50,3 +57,4 @@ const CategoryPage: NextPage = ({ category }) => {
 };
 
 export default CategoryPage;
+//sendgrid
